@@ -1,0 +1,285 @@
+﻿<div class="row">
+
+    <div class="col-sm-12">
+
+        <div class="form-group">
+
+            <div id="idUploadFile" class="alert" role="alert" style="display:none"> </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <input type="file" id="fileupload" accept=".json" />
+            <br />
+
+            
+            <button class="btn btn-default" type="button" id="btnupload"><span class="glyphicon glyphicon-upload"></span>  Upload</button>
+
+            <ul class="list-group" id="filesList">
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+<table>
+    <table id="searchList">
+
+        <tr>
+            <td>
+                <select id="featureOptions1" class="form-control">
+                </select>
+            </td>
+            <td><input type="text" class="form-control" name="x" placeholder="Search term..." id="searchQuery1"></td>
+        </tr>
+
+    </table>
+
+    <tr>
+        <button onclick="showMoreOptions()">+</button>
+    </tr>
+    <tr>
+        <button class="btn btn-default" type="button" id="searchBtn"><span class="glyphicon glyphicon-search"></span>  Search</button>
+    </tr>
+</table>
+    
+</span>
+
+
+</div>
+</div>
+
+<div class="row">
+
+    <div class="col-sm-12">
+        <table class="table">
+            <thead>
+                <tr>
+                </tr>
+            </thead>
+            <tbody id="searchResults">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+        <script>
+            var optionsCount = 1;
+            var videoNumbers = [];
+                        
+            var listOfFeatures = "";
+            var listOfOperators = "";
+
+            $(document).ready(function () {
+                var searchOptionsRow = "";
+
+                $.ajax({
+
+                    url: '/api/reflections/',
+
+                    type: 'GET',
+
+                    contentType: false,
+
+                    processData: false,
+
+                    success: function (features) {
+
+                        listOfFeatures = '<option value="All">All features</option>';
+                        $.each(features, function (index, feature) {
+                            listOfFeatures += '<option value="' + feature + '">' + feature + '</option>';
+                        })
+                        $("#featureOptions1").append(listOfFeatures);
+
+                    },
+
+                    error: function () {
+                        alert("Unable to load features");
+                    }
+                })
+
+                $.ajax({
+
+                    url: '/api/reflections/1',
+
+                    type: 'GET',
+
+                    contentType: false,
+
+                    processData: false,
+
+                    success: function (features) {
+
+
+                        $.each(features, function (index, feature) {
+                            listOfOperators += '<option value="' + feature + '">' + feature + '</option>';
+                        })
+
+                    },
+
+                    error: function () {
+                        alert("Unable to load features");
+                    }
+                })
+
+                $('.search-panel .dropdown-menu').find('a').click(function (e) {
+                    e.preventDefault();
+                    var param = $(this).attr("href").replace("#", "");
+                    var concept = $(this).text();
+                    $('.search-panel span#search_concept').text(concept);
+                    $('.input-group #search_param').val(param);
+                });
+                //dropdown
+
+                $("#searchBtn").click(function () {
+                    //video params
+                    var videoNumbersString = "";
+                    $.each(videoNumbers, function (index, videonumber) {
+                        videoNumbersString += "videoNumbers=" + videonumber + "&";
+                    })
+
+                    //search params
+                    var searchString = "";
+                    if (document.getElementById("searchQuery1").value != "") {
+                        searchString = "featureType=" + document.getElementById("featureOptions1").value + "&queries=" + document.getElementById("searchQuery1").value;
+                    }
+                    for (var i = 2; i <= optionsCount; i++) {
+                        var searchVal = document.getElementById("searchQuery" + i).value;
+                        if (searchVal != "") {
+                            searchString += "&operatorStrings=" + document.getElementById("operatorOption" + i).value + "&featureType=" + document.getElementById("featureOptions" + i).value + "&queries=" + document.getElementById("searchQuery" + i).value;
+                        }
+                    }
+
+                    //validation
+                    if (videoNumbersString == "") {
+                        alert("Please upload a video");
+                        return;
+                    }
+                    if (searchString == "") {
+                        alert("Please enter a query");
+                        return;
+                    }
+
+                    //ajax call
+                    $.ajax({
+                        url: "/api/values?" + videoNumbersString + searchString,
+                        method: "GET",
+                        success(searchResults) {
+                            var str = "";
+                            $.each(searchResults, function (key, searchResult) {
+                                str += "<tr><td></td><td></td></tr><tr><td></td><td><b>" + searchResult.videoName + "</b></td></tr>";
+                                $.each(searchResult.resultInstances, function (key, resultInstance) {
+                                    str += "<tr><td>" + resultInstance.start + "</td ><td>" + resultInstance.end + "</td><td> " + '<table class="table"><thead><tr></tr></thead><tbody id="1">'
+                                    $.each(resultInstance.featureDetails, function (index, featureDetail) {
+                                        str += "<tr><td>" + featureDetail.featureType + "</td ><td>" + featureDetail.info + "</td></tr> ";
+                                    })
+                                    str +='<tr><td></td><td></td></tr></tbody ></table ></td></tr><tr><td></td><td></td><td></td></tr>';
+                                });
+                                
+                            });
+                            $("#searchResults").empty();
+                            $("#searchResults").append(str);
+
+                        },
+                        failure(error) {
+                            alert(error);
+                        }
+                    })
+
+                })
+
+            });
+
+            $(function () {
+                $('#btnupload').click(function () {
+
+                    if ($('#fileupload').val() == '') {
+                        alert('Plase select file');
+                        return;
+                    }
+                    var formdata = new FormData();
+                    var file = $('#fileupload')[0];
+                    //var parsed = JSON.parse(file.files[0]);
+                    
+                    formdata.append('file', file.files[0]);
+
+                    var validjsontext = '{"firstnam":"James","surname":"Bond","mobile":["007-700-007","001-007-007-0007"]}';
+                    var invalidjsontext = '{"firstnam""James","surname":"Bond","mobile":["007-700-007","001-007-007-0007"]}'; 
+
+                    console.log("With Valid JSON Text: " + validjsontext + IsValidJSONString(validjsontext));
+                    console.log("With inValid JSON Text: " + invalidjsontext + IsValidJSONString(invalidjsontext));
+
+                    console.log(file);
+                    var reader = new FileReader();
+                    var fileData = reader.readAsText(file.files[0]);
+                    console.log("With inValid JSON Text: " + fileData + IsValidJSONString(fileData));
+                    /*
+                    try {
+                        JSON.parse(formdata);
+                    }
+                    catch {
+                        alert("File has unsupported format! Please try again");
+                    }
+                    */
+                    $.ajax({
+                        url: '/api/values/',
+                        type: 'POST',
+                        data: formdata,
+                        contentType: false,
+                        processData: false,
+                        success: function (d) {
+                            videoNumbers.push(d);
+                            $('#filesList').append('<li class="list - group - item">' + $('#fileupload').val().split("\\").pop() + '<span class="close" id="closebtn' + d + '" > x</span ></li > ');
+                            $("#closebtn" + d).click(function () {
+                                this.parentElement.style.display = 'none';
+                                videoNumbers.splice(videoNumbers.indexOf(d), 1);
+                                $.ajax({
+                                    url: '/api/values/' + d,
+                                    type: 'DELETE',
+                                    data: formdata,
+                                    contentType: false,
+                                    processData: false,
+                                    success: function () {
+                                    },
+                                    error: function () {
+                                    }
+                                })
+                            })
+                        },
+                        error: function () {
+                            $('#idUploadFile').addClass('alert_error').html('<strong>Failed!</strong> Error in upload');
+                        }
+                    })
+                });
+            });
+
+            function showMoreOptions(option) {
+                optionsCount++;
+                searchOptionsRow = '<tr><td><select id="operatorOption' + optionsCount + '" class="form-control">' + listOfOperators + '</select ><tr><td><select class="form-control" id="featureOptions' + optionsCount + '">' + listOfFeatures + '</select ></td > <td><input type="text" class="form-control" name="x" placeholder="Search term..." id="searchQuery' + optionsCount + '"></tr>';
+                $("#searchList").append(searchOptionsRow);
+            }
+
+
+            function IsValidJSONString(str) {
+                try {
+                    JSON.parse(str);
+                } catch (e) {
+                    return false;
+                }
+                return true;
+            }
+        </script>

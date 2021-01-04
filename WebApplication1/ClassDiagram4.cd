@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Time_Series_Serach_Engine.Controllers.SearchResult" Collapsed="true">
+    <Position X="33.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.Feature" Collapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABBAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.Instance" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.ShortInstance" Collapsed="true">
+    <Position X="9.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAgAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.Face" Collapsed="true">
+    <Position X="37" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAECAAAIAAAgAAAAAAEABAAAAAAAAAAAkA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.Topic">
+    <Position X="1.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAECAgAAAEAgAAAAAEEAAAAAQAAAAAAAgA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.Label" Collapsed="true">
+    <Position X="8.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAgAAAAAAAAAAAAEAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.Scene" Collapsed="true">
+    <Position X="17.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.KeyFrame" Collapsed="true">
+    <Position X="22" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.Shot" Collapsed="true">
+    <Position X="35.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAABAAAAAAABAAAAAAgA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.Brand" Collapsed="true">
+    <Position X="28.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAECAAAIAAAgAAAAAEEAABAAABAAAAAAgA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.NamedLocation" Collapsed="true">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAIAAAgAAAAAEEAABAAABAAAAAAgA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.NamedPeople" Collapsed="true">
+    <Position X="10.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAIAAAgAAAAAEEAABAAABAAAAAAgA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.Sentiment" Collapsed="true">
+    <Position X="19.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAQAgA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.Emotion" Collapsed="true">
+    <Position X="24.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.VisualContentModeration" Collapsed="true">
+    <Position X="26.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAABAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.Block" Collapsed="true">
+    <Position X="31" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.FramePattern" Collapsed="true">
+    <Position X="6.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAgAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.TextualContentModeration" Collapsed="true">
+    <Position X="13" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAggA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.Statistics" Collapsed="true">
+    <Position X="37" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAIAAAAAAAAgAAAAABAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.Insights" Collapsed="true">
+    <Position X="38.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oQGAAaICAAAAARgAABAABIAAAAQAAAAACAIAAAAABAE=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.Video" Collapsed="true">
+    <Position X="35.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAAAQAAAAGAAiASAAAAABAAwAAEACEAAAAARgMkgA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.Range" Collapsed="true">
+    <Position X="38.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.VideosRanx" Collapsed="true">
+    <Position X="37" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.Transcript" Collapsed="true">
+    <Position X="15.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAIAAEAAAAAAgA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.Ocr" Collapsed="true">
+    <Position X="37" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAwAQAAAgAgAAAAIAAAIAAAAAAAAAgA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time_Series_Serach_Engine.Controllers.Keyword" Collapsed="true">
+    <Position X="35.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAIAAAAAAAAAgA=</HashCode>
+      <FileName>Models\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
